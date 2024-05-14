@@ -1,0 +1,58 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./assets/galaxia.jpg);
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo{
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img{
+    width: 50%;
+}
+
+.logo-text{
+    font-family: 'Star Wars', sans-serif;
+    color: aliceblue;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+.icones-social{
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i{
+    font-size: 1.5rem;
+    color: yellow;
+}
+
+i:hover{
+    color: aliceblue;
+}
+
+
+
