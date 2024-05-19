@@ -1,0 +1,163 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./assets/galaxia.jpg);
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    width: 250px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img{
+    width: 40%;
+    height: auto;
+}
+
+.logo-text{
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1.1rem;
+    margin-left: 20px;
+    color: aliceblue;
+}
+
+.icones-social{
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i{
+    font-size: 1.5rem;
+    color: yellow;
+}
+
+i:hover{
+    color: aliceblue;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+
+h1{
+    color: rgb(251, 215, 11);
+    font-family: 'Star Wars', sans-serif;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.main-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 10px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.cards{
+    width:230px;
+    height: 470px;
+    background-position: 50% 50%;
+    background-size: cover;
+    align-items: end;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5;
+    padding: 5px;
+    display: flex;
+}
+
+cards:hover{
+    transform: scale(1.02);
+}
+.characters-name-bg{
+    width: 100%;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.character-name{
+    font-size: 1rem;
+    font-family: 'Star Wars', sans-serif;
+    color: gold;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button{
+    background-color: gold;
+    width: 70px;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.699);
+    border-radius: 3px;
+    border: 1px solid black;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: aliceblue;
+    color: gold;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+    row-gap: 30px;
+}
+
+p{
+    color: aliceblue;
+}
+
+.footer-text{
+    font-family: 'Star Wars', sans-serif;
+    color: aliceblue;
+    font-weight: 300;
+}
+
+#back-button{
+    visibility: hidden;
+}
+
