@@ -1,43 +1,42 @@
+const $content = document.querySelector(".cards-container");
+
 let currentPageUrl = "https://swapi.dev/api/people/";
 
-window.onload = async () => {
+document.addEventListener("DOMContentLoaded", () => {
   try {
-    await loadCharacters(currentPageUrl);
+    fetchCards(currentPageUrl);
   } catch (error) {
-    console.log(error);
-    alert("Erro ao carregar os cards");
+    console.log(error.message);
   }
-};
+});
 
-async function loadCharacters(url) {
-  const mainContent = document.getElementById("main-content");
-  mainContent = "";
+async function fetchCards(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  $content.innerHTML = "";
+  data.results.forEach((character) => {
+    createCard(character);
+  });
+}
 
-  try {
-    const response = await fetch(url);
-    const responseJson = await response.json();
+function createCard(character) {
+  const card = document.createElement("div");
+  card.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(
+    /\D/g,
+    ""
+  )}.jpg')`;
+  console.log("CRIEI CARDS");
+  card.className = "cards";
 
-    responseJson.results.forEach((character) => {
-      const card = document.createElement("div");
-      card.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/1.jpg')`;
-      card.className = "cards";
+  const characterNameBG = document.createElement("div");
+  characterNameBG.className = "character-name-bg";
 
-      const characterNameBG = document.createElement("div");
-      characterNameBG.className = "charactere-name-bg";
+  const characterName = document.createElement("span");
+  characterName.className = "character-name";
+  characterName.innerText = `${character.name}`;
 
-      const characterName = document.createElement("span");
-      characterName.className = "charactere-name";
-      characterName.innerText = `${character.name}`;
+  characterNameBG.appendChild(characterName);
+  card.appendChild(characterNameBG);
 
-      characterNameBG.appendChild(characterName);
-      card.appendChild(characterNameBG);
-
-      mainContent.appendChild(card);
-    });
-
-    currentPageUrl = url;
-  } catch (error) {
-    alert("Erro ao carregar os personagens");
-    console.log(error);
-  }
+  $content.appendChild(card);
 }

@@ -14,15 +14,17 @@ a{
 }
 
 header{
-    height: 70px;
+    height: 15vh;
     display: flex;
-    justify-content: space-around;
+    padding: 2rem 4rem;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo{
-    width: 250px;
+    width: 500px;
     height: 100%;
+    gap: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,19 +37,18 @@ header{
 
 .logo-text{
     font-family: 'Star Wars', sans-serif;
-    font-size: 1.1rem;
-    margin-left: 20px;
+    font-size: 2rem;
     color: aliceblue;
 }
 
 .icones-social{
-    width: 130px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
 }
 
 i{
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: yellow;
 }
 
@@ -55,51 +56,69 @@ i:hover{
     color: aliceblue;
 }
 
-.main-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+main {
     width: 100%;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
     color: rgb(251, 215, 11);
     font-family: 'Star Wars', sans-serif;
-    font-weight: 300;
-    margin-bottom: 20px;
+    margin: 40px 0;
+    text-align: center;
+    font-weight: 400;
 }
 
-.main-content{
-    width: 100%;
+@media (max-width: 920px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .logo {
+        flex-direction: column;
+    }
+}
+
+.cards-container{
+    width: 85%;
+    background-color: rgba(74, 74, 74, 0.1);  
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
-    column-gap: 20px;
-    row-gap: 10px;
-    padding: 0 20px;
     flex-wrap: wrap;
+    justify-content: center ;
+    gap: 20px;
 }
 
 .cards{
-    width:230px;
+    width: 100%;
+    max-width: 250px;
     height: 470px;
-    background-position: 50% 50%;
+    background-position: center;
     background-size: cover;
-    align-items: end;
+    display: flex;
+    align-items: flex-end;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.5;
+    transition: 0.5s;
     padding: 5px;
-    display: flex;
 }
 
-cards:hover{
+.cards:hover{
     transform: scale(1.02);
 }
-.characters-name-bg{
+.character-name-bg{
     width: 100%;
     height: 30px;
-    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display:flex;
     align-items: center;
     justify-content: center;
@@ -107,9 +126,11 @@ cards:hover{
 }
 
 .character-name{
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 10px;
     font-family: 'Star Wars', sans-serif;
     color: gold;
+    text-align: center;
 }
 
 .buttons{
@@ -157,7 +178,6 @@ p{
     font-weight: 300;
 }
 
-#back-button{
+.back-button{
     visibility: hidden;
 }
-
